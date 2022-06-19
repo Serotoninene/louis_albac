@@ -1,17 +1,17 @@
 import locomotiveScroll from "locomotive-scroll";
 import React, { useEffect } from "react";
 
-export default function Navbar() {
+export default function Navbar({ setScrollTo }) {
   return (
     <ul id="Navbar" className="absolute flex">
       <li>
-        <p>Réalisations</p>
+        <a href="/#Realisations">Réalisations</a>
       </li>
       <li>
-        <p>Mon parcours</p>
+        <a href="/#ParcoursPro"> Mon parcours </a>
       </li>
       <li>
-        <p> Contact </p>
+        <a href="/#Contact"> Contact </a>
       </li>
     </ul>
   );

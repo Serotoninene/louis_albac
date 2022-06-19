@@ -1,22 +1,22 @@
 import React, { useEffect, useRef } from "react";
+// Utilitaries
+import useWindowSize from "../Utilitaries/Utilitaries/Hooks/useWindowSize";
 // Locomotive scroll
 import locomotiveScroll from "locomotive-scroll";
 
 export default function ScrollContainer(props) {
   const scrollContainer = useRef();
+  const { width } = useWindowSize();
+  let locoScroll;
   useEffect(() => {
-    const locoScroll = new locomotiveScroll({
+    locoScroll = new locomotiveScroll({
       el: scrollContainer.current,
       smooth: true,
-      direction: "horizontal",
+      direction: width < 576 ? "vertical" : "horizontal",
     });
-
     setTimeout(locoScroll.update(), 100);
+  }, [width]);
 
-    return () => {
-      locoScroll.destroy();
-    };
-  }, []);
   return (
     <div
       className="ScrollContainer flex"

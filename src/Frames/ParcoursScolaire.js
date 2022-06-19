@@ -32,7 +32,7 @@ const timelineData = [
   },
   {
     id: 3,
-    position: "75%",
+    position: "70%",
     date: "2021/2022",
     company: "LPMD",
     title: "",

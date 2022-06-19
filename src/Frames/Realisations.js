@@ -97,10 +97,10 @@ export default function Realisations({ ref }) {
 
   return (
     <div ref={ref} id="Realisations" data-scroll-section>
-      <div className="container flex-column justify-between align-center relative">
+      <div className="container flex-column align-center relative">
         <div className="realisations-header">
           <h2>Mes réalisations</h2>
-          <div className="filters flex ">
+          <div className="filters flex justify-center">
             {categories.map((category, idx) => (
               <div key={idx} className=" category flex align-center">
                 <p
@@ -116,6 +116,7 @@ export default function Realisations({ ref }) {
             ))}
           </div>
         </div>
+
         <AnimatePresence>
           <div className="realisations-content">
             {contentDisplayed.map((c) => (

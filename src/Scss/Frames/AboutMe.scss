@@ -12,6 +12,7 @@
   .content-container {
     margin-bottom: 40px;
     height: 90%;
+    overflow: scroll;
   }
 
   .text {
@@ -19,16 +20,91 @@
     height: min-content;
     margin-right: 24px;
     * {
+      font-size: 1rem;
       color: $lightBeige;
       word-wrap: break-word;
       white-space: pre-wrap;
       word-break: break-word;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    p,
+    li {
+      font-size: 1rem;
     }
   }
 
   .photo {
+    height: 90%;
     grid-column-start: span 5;
     overflow: hidden;
+  }
+
+  @media screen and (min-width: 1440px) {
+    h2 {
+      margin-bottom: 64px;
+    }
+    .content-container {
+      width: 1080px;
+      margin: 0 auto;
+
+      .text * {
+        font-size: 1.3rem;
+      }
+
+      .photo {
+        height: 100%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1980px) {
+    h2 {
+      margin-bottom: 96px;
+    }
+    .text {
+      width: 90%;
+    }
+    .text * {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    padding: 4Opx 64px;
+    .text p,
+    .text li {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 24px 40px;
+  }
+
+  @media screen and (max-width: 772px) {
+    padding: 24px;
+
+    .text p,
+    .text li {
+      margin-bottom: 8px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 32px;
+    height: auto;
+
+    h2 {
+      font-size: 3rem;
+    }
+    .text {
+      grid-column-start: span 12;
+      margin-bottom: 16px;
+    }
+
+    .photo {
+      grid-column-start: span 12;
+    }
   }
 }

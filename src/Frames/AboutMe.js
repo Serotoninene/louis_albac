@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Components/Button";
 import louisPhoto from "../Assets/Images/louisAlbac.png";
 
 export default function AboutMe() {
@@ -34,6 +35,9 @@ export default function AboutMe() {
               animation 2D et 3D
             </li>
           </ul>
+          <div className="flex justify-center">
+            <Button></Button>
+          </div>
         </div>
         <div className="photo">
           <img src={louisPhoto} alt="Louis Albac" className="img-fluid" />

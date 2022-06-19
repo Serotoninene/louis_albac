@@ -29,6 +29,10 @@ a {
   width: 100vw;
   overflow-x: scroll;
   background-color: $dark;
+
+  @media screen and (max-width: 576px) {
+    overflow-x: hidden;
+  }
 }
 
 h1 {

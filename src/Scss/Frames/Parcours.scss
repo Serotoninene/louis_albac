@@ -6,13 +6,44 @@
   padding: 40px 80px;
 
   .timeline-container {
-    height: -webkit-fill-available;
+    height: calc(100% - 10%);
     width: 100%;
 
     .line {
       width: 100%;
       height: 2px;
       background-color: $dark;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 772px) {
+    width: 140vw;
+    padding: 40px;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 24px;
+    width: 100vw;
+    height: auto;
+    .timeline-container {
+      height: auto;
+      display: block;
+      .line {
+        height: inherit;
+        background-color: transparent;
+      }
     }
   }
 }

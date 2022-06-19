@@ -14,7 +14,7 @@ const timelineData = [
   },
   {
     id: 1,
-    position: "66%",
+    position: "53%",
     date: "Novembre 2021/Septembre 2021",
     company: "l'Atelier du Chef",
     title: "Biguglia",

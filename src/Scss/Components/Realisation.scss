@@ -1,8 +1,28 @@
 .Realisation {
   grid-column-start: span 4;
   padding: 8px;
+  overflow: hidden;
+  height: fit-content;
+  margin-bottom: 32px;
 
   img {
     cursor: pointer;
+  }
+
+  // @media screen and (min-width: 1440px) {
+  //   grid-column-start: span 5;
+  // }
+
+  @media screen and (max-width: 772px) {
+    grid-column-start: span 5;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-column-start: span 20;
+    margin-bottom: 16px;
+    overflow: visible;
+
+    img {
+    }
   }
 }
