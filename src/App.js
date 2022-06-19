@@ -35,18 +35,14 @@ function App() {
 
   return (
     <div className="App">
-      <div
-        ref={scrollContainer}
-        className="ScrollContainer flex"
-        data-scroll-container
-      >
+      <ScrollContainer>
         <Header />
         <Realisations />
         <ParcoursScolaire />
         <ParcoursPro />
         <AboutMe />
         <Contact />
-      </div>
+      </ScrollContainer>
     </div>
   );
 }
