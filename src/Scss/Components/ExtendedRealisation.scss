@@ -12,6 +12,9 @@
     h3,
     p {
       color: $dark !important;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
     h3 {
@@ -33,6 +36,21 @@
       .line:last-of-type {
         margin-top: 10px;
         transform: translate(0px, -6px) rotate(-225deg) scale(0.5, 1);
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .window {
+      width: 100%;
+
+      h3 {
+        font-size: 3rem;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 0.8;
       }
     }
   }

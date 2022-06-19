@@ -1,73 +1,86 @@
 import React, { useState, useEffect, useRef } from "react";
 // Component
 import Realisation from "../Components/Realisation";
-// Framer motion
-import { AnimatePresence, LayoutGroup } from "framer-motion";
-// Assets
-import trueCider from "../Assets/Images/trueCider.png";
 import ExtendedRealisation from "../Components/ExtendedRealisation";
+// Framer motion
+import { AnimatePresence } from "framer-motion";
+
+// Assets
+import assets from "../projects";
 
 const content = [
   {
     id: 0,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Photographie",
-    description: "Description Lorem Ipsum",
+    title: "CV Animé",
+    imgSrc: assets.cv,
+    video: assets.cvVideo,
+    category: "Web",
+    description:
+      "Cv animé réalisé sur After Effects dans le cadre d'un projet pour la licence professionnelle métiers du design. Le but de ce projet est de proposer son CV de manière interactive et créative.",
   },
   {
     id: 1,
-    title: "True Cider",
-    imgSrc: trueCider,
+    title: "Sound Design",
+    imgSrc: assets.soundDesign,
+    video: assets.soundDesignVid,
     category: "Animation",
-    description: "Description Lorem Ipsum",
+    description:
+      "Projet de sound design réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet est de refaire le design sonore d'une vidéo de 30 secondes : bruitages, musiques, mixage audio. Travail réalisé sur Premiere Pro. Les sons utilisés proviennent de banques de sons libres de droit.",
   },
   {
     id: 2,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Web",
-    description: "Description Lorem Ipsum",
+    title: "Typographie",
+    imgSrc: assets.furiosa,
+    category: "Illustration",
+    description:
+      'Projet typographique réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet est de créer un lettrage pour 2 marques aux domaines d\'applications différents (ici un constructeur automobile et une compagnie aérienne). Le mot proposé est le mot "Furiosa". Projet réalisé sur Illustrator.',
   },
   {
     id: 3,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Animation",
-    description: "Description Lorem Ipsum",
+    title: "Projet Photoshop",
+    imgSrc: assets.photoshopProject,
+    category: "Illustration",
+    description:
+      "Projet de création visuelle réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet est de détourner une paire de sneakers existante (Reebook Club c 85) pour créer une nouvelle paire. Projet réalisé sur Photoshop.",
   },
   {
     id: 4,
-    title: "True Cider",
-    imgSrc: trueCider,
+    title: "La cuisine des animaux",
+    imgSrc: assets.cuisineAnimaux,
     category: "Print",
-    description: "Description Lorem Ipsum",
-  },
-  {
-    id: 1,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Print",
-    description: "Description Lorem Ipsum",
+    description:
+      "Création d’un packaging pour la marque de nourriture pour chien et chat La cuisine des animaux. Projet professionnel réalisé dans le cadre de mon alternance.",
   },
   {
     id: 5,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Animation",
-    description: "Description Lorem Ipsum",
+    title: "Projet Photo 1",
+    imgSrc: assets.projetPhoto1,
+    category: "Photographie",
+    description:
+      "Projet photographique réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet est de faire ressortir des éléments géométriques ( lignes; courbes) à travers des photos.",
   },
   {
     id: 6,
-    title: "True Cider",
-    imgSrc: trueCider,
-    category: "Animation",
-    description: "Description Lorem Ipsum",
+    title: "Projet Photo 2",
+    imgSrc: assets.projetPhoto2,
+    category: "Photographie",
+    description:
+      "Projet photographique réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet est de faire une photo studio d’un objet avec une mise en scène, ici une paire de sneakers.",
   },
   {
     id: 7,
-    title: "True Cider",
-    imgSrc: trueCider,
+    title: "Animation",
+    imgSrc: assets.animationPerso,
+    video: assets.animationPersoVid,
+    category: "Animation",
+    description:
+      "Projet d'animation de personnage réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet était de faire marcher un personnage et de le faire sauter par-dessus un trou à l'aide d'After Effects. Ce travail a pour but de se familiariser avec les outils d'after (marionnette). J'ai utilisé le personnage de Darwin Watterson, issu de la série \"Le monde incroyable de Gumball\".",
+  },
+  {
+    id: 8,
+    title: "Animation",
+    imgSrc: assets.animationPerso,
+    video: assets.animationPersoVid,
     category: "Animation",
     description: "Description Lorem Ipsum",
   },
@@ -121,7 +134,7 @@ export default function Realisations({ ref }) {
           <div className="realisations-content">
             {contentDisplayed.map((c) => (
               <Realisation
-                key={c.key}
+                key={c.id}
                 contentData={c}
                 setElSelected={setElSelected}
               />

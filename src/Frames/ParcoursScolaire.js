@@ -1,9 +1,10 @@
 import React from "react";
 import TimelinePoint from "../Components/TimelinePoint";
+import { v4 as uuidv4 } from "uuid";
 
 const timelineData = [
   {
-    id: 0,
+    id: uuidv4(),
     position: "3%",
     date: "Juin 2018",
     company: "Bac STI2D ITEC",
@@ -13,7 +14,7 @@ const timelineData = [
       "Analyse, Sciences des matériaux, Conduite de projet, Résistance des matériaux, éco-conception",
   },
   {
-    id: 1,
+    id: uuidv4(),
     position: "25%",
     date: "2018/2019",
     company: "DUT Mesures Physiques",
@@ -22,7 +23,7 @@ const timelineData = [
     description: "Analyse, Sciences des matériaux, Chimie",
   },
   {
-    id: 2,
+    id: uuidv4(),
     position: "50%",
     date: "2019/2021",
     company: "DUT MMI",
@@ -31,7 +32,7 @@ const timelineData = [
     description: "Communication, Développement web, Design, Gestion de projet",
   },
   {
-    id: 3,
+    id: uuidv4(),
     position: "70%",
     date: "2021/2022",
     company: "LPMD",
@@ -48,8 +49,8 @@ export default function ParcoursScolaire() {
       <h2 className="text-center">Mon parcours scolaire</h2>
       <div className="timeline-container flex justify-center align-center">
         <div className="line relative">
-          {timelineData.map((data) => (
-            <TimelinePoint timelineData={data} />
+          {timelineData.map((data, idx) => (
+            <TimelinePoint timelineData={data} key={idx} />
           ))}{" "}
         </div>
       </div>

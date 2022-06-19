@@ -7,7 +7,6 @@ export default function TimelinePoint({ timelineData }) {
     <div
       className="TimelinePoint absolute flex-column align-center"
       style={{ left: timelineData.position }}
-      key={timelineData.id}
     >
       <div className="point relative"></div>
       <div className="content">
