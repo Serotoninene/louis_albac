@@ -1,0 +1,20 @@
+// Setup
+@import "./Setup/fonts";
+@import "./Setup/variables";
+@import "./Setup/utils";
+@import "./Setup/base";
+
+// Frames
+@import "./Frames/Header.scss";
+@import "./Frames/Realisations.scss";
+@import "./Frames/Parcours.scss";
+@import "./Frames/AboutMe.scss";
+@import "./Frames/Contact.scss";
+
+// Components
+@import "./Components/Navbar.scss";
+@import "./Components/Realisation.scss";
+@import "./Components/TimelinePoint.scss";
+@import "./Components/ExtendedRealisation.scss";
+@import "./Components/ScrollContainer.scss";
+@import "locomotive-scroll/src/locomotive-scroll.scss"; // locomotive scroll styles

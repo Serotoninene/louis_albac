@@ -1,0 +1,39 @@
+#Realisations {
+  height: 100vh;
+  width: 100vw;
+  background-color: $dark;
+  padding: 40px 80px;
+
+  & * {
+    color: $lightBeige;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .realisations-header {
+    text-align: center;
+    margin-bottom: 40px;
+    h2 {
+      margin-bottom: 32px;
+    }
+    .line {
+      width: 40px;
+      height: 0.5px;
+      background-color: $lightBeige;
+      margin: 0 8px;
+    }
+
+    .category:last-of-type .line {
+      display: none;
+    }
+  }
+
+  .realisations-content {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    width: 100%;
+    height: -webkit-fill-available;
+  }
+}

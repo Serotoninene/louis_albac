@@ -1,0 +1,39 @@
+.ExtendedRealisation {
+  position: absolute;
+  width: 100vw;
+  height: inherit;
+
+  .window {
+    margin: 24px;
+    width: 50%;
+    background-color: $lightBeige;
+    padding: 45px;
+
+    h3,
+    p {
+      color: $dark !important;
+    }
+
+    h3 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .cross {
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+      .line {
+        background-color: $dark;
+        height: 2px;
+        width: 40px;
+        transform: translate(0px, 6px) rotate(225deg) scale(0.5, 1);
+      }
+
+      .line:last-of-type {
+        margin-top: 10px;
+        transform: translate(0px, -6px) rotate(-225deg) scale(0.5, 1);
+      }
+    }
+  }
+}

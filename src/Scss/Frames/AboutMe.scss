@@ -1,0 +1,34 @@
+#AboutMe {
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark;
+  padding: 40px 80px;
+
+  h2 {
+    color: $lightBeige;
+    margin-bottom: 24px;
+  }
+
+  .content-container {
+    margin-bottom: 40px;
+    height: 90%;
+  }
+
+  .text {
+    grid-column-start: span 7;
+    height: min-content;
+    margin-right: 24px;
+    * {
+      color: $lightBeige;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin-bottom: 16px;
+    }
+  }
+
+  .photo {
+    grid-column-start: span 5;
+    overflow: hidden;
+  }
+}
