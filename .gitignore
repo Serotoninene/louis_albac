@@ -12,7 +12,7 @@
 /build
 
 # Assets
-/src/Assets
+# /src/Assets
 
 # misc
 .DS_Store
