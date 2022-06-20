@@ -1,7 +1,9 @@
 .ScrollContainer {
-  min-width: 800vw;
+  min-width: 600vw;
 
   @media screen and (max-width: 576px) {
-    display: block;
+    & > div {
+      display: grid;
+    }
   }
 }

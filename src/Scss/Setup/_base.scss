@@ -27,11 +27,13 @@ a {
 
 .App {
   width: 100vw;
-  overflow-x: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: $dark;
 
   @media screen and (max-width: 576px) {
     overflow-x: hidden;
+    overflow-y: scroll;
   }
 }
 

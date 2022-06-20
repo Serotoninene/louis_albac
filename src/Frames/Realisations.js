@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 // Component
 import Realisation from "../Components/Realisation";
 import ExtendedRealisation from "../Components/ExtendedRealisation";
+// Utilitaries
+import useWindowSize from "../Utilitaries/Utilitaries/Hooks/useWindowSize";
 // Framer motion
 import { AnimatePresence } from "framer-motion";
 
@@ -76,14 +78,6 @@ const content = [
     description:
       "Projet d'animation de personnage réalisé dans le cadre de la licence professionnelle métiers du design. Le but de ce projet était de faire marcher un personnage et de le faire sauter par-dessus un trou à l'aide d'After Effects. Ce travail a pour but de se familiariser avec les outils d'after (marionnette). J'ai utilisé le personnage de Darwin Watterson, issu de la série \"Le monde incroyable de Gumball\".",
   },
-  {
-    id: 8,
-    title: "Animation",
-    imgSrc: assets.animationPerso,
-    video: assets.animationPersoVid,
-    category: "Animation",
-    description: "Description Lorem Ipsum",
-  },
 ];
 
 const categories = [
@@ -95,6 +89,7 @@ const categories = [
 ];
 
 export default function Realisations({ ref }) {
+  const { width } = useWindowSize();
   const [categorySelected, setCategorySelected] = useState("");
   const [elSelected, setElSelected] = useState("");
   let contentDisplayed = content;
@@ -135,15 +130,19 @@ export default function Realisations({ ref }) {
             {contentDisplayed.map((c) => (
               <Realisation
                 key={c.id}
+                width={width}
+                elSnapshot={elSnapshot}
                 contentData={c}
+                elSelected={elSelected}
                 setElSelected={setElSelected}
               />
             ))}
           </div>
 
-          {elSelected !== "" && (
+          {width > 576 && elSelected !== "" && (
             <ExtendedRealisation
               elSnapshot={elSnapshot}
+              key={elSelected}
               setElSelected={setElSelected}
             />
           )}

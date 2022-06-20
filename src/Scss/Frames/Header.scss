@@ -13,6 +13,7 @@
     width: 25vw;
 
     h1 {
+      z-index: 2;
       position: absolute;
       font-size: 5rem;
       font-style: italic;
@@ -103,18 +104,13 @@
 
     .img-container h1:first-of-type,
     h1:last-of-type {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
   }
 
   @media screen and (max-width: 576px) {
     .img-container {
       width: 50vw;
-    }
-
-    .img-container h1:first-of-type,
-    h1:last-of-type {
-      font-size: 2.5rem;
     }
   }
 }

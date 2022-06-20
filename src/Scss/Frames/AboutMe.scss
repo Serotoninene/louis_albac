@@ -2,6 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: $dark;
+  overflow-y: scroll;
   padding: 40px 80px;
 
   h2 {
@@ -38,6 +39,39 @@
     height: 90%;
     grid-column-start: span 5;
     overflow: hidden;
+  }
+
+  .CV-container {
+    min-height: 90%;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+    .cross {
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+      .line {
+        background-color: $lightBeige;
+        height: 2px;
+        width: 40px;
+        transform: translate(0px, 6px) rotate(225deg) scale(0.5, 1);
+      }
+
+      .line:last-of-type {
+        margin-top: 10px;
+        transform: translate(0px, -6px) rotate(-225deg) scale(0.5, 1);
+      }
+    }
+    .CV {
+      width: 720px;
+      height: 97vh;
+      margin: 8px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("../../Assets/Images/Louis_Albac.png");
+    }
   }
 
   @media screen and (min-width: 1440px) {
@@ -105,6 +139,13 @@
 
     .photo {
       grid-column-start: span 12;
+    }
+
+    .CV-container {
+      height: 100%;
+      .cross .line {
+        background-color: $dark;
+      }
     }
   }
 }

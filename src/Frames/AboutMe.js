@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Components/Button";
-import louisPhoto from "../Assets/Images/louisAlbac.png";
+import louisPhoto from "../Assets/Images/louisAlbac.jpg";
+import cv from "../Assets/Images/Louis_Albac.png";
 
 export default function AboutMe() {
+  const [isDisplayingCV, setIsDisplayingCV] = useState(false);
   return (
-    <div id="AboutMe" data-scroll-section>
+    <div id="AboutMe" className="relative" data-scroll-section>
       <h2 className="text-center">À propos de moi</h2>
       <div className="content-container grid">
         <div className="text">
@@ -36,13 +38,28 @@ export default function AboutMe() {
             </li>
           </ul>
           <div className="flex justify-center">
-            <Button></Button>
+            <Button setIsDisplayingCV={setIsDisplayingCV}></Button>
           </div>
         </div>
         <div className="photo">
           <img src={louisPhoto} alt="Louis Albac" className="img-fluid" />
         </div>
       </div>
+      {isDisplayingCV && (
+        <div className="CV-container absolute flex justify-center">
+          <div className="CV relative">
+            <div
+              className="cross absolute"
+              onClick={() => {
+                setIsDisplayingCV(false);
+              }}
+            >
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

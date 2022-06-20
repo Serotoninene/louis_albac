@@ -2,6 +2,7 @@
   position: absolute;
   width: 100vw;
   height: inherit;
+  z-index: 2;
 
   .window {
     margin: 24px;
@@ -18,8 +19,8 @@
     }
 
     h3 {
-      font-size: 3rem;
-      margin-bottom: 16px;
+      font-size: 2.5rem;
+      margin: 16px 0;
     }
 
     .cross {
@@ -40,12 +41,21 @@
     }
   }
 
+  @media screen and (max-width: 772px) {
+    .window h3 {
+      font-size: 2rem;
+    }
+  }
+
   @media screen and (max-width: 576px) {
+    top: 0;
+    transform: translateY(-20%);
     .window {
-      width: 100%;
+      margin: 0;
+      width: 80%;
 
       h3 {
-        font-size: 3rem;
+        font-size: 1.5rem;
         margin-bottom: 16px;
       }
 

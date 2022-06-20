@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // Utilitaries
 import useWindowSize from "../Utilitaries/Utilitaries/Hooks/useWindowSize";
 // Locomotive scroll
@@ -7,23 +7,35 @@ import locomotiveScroll from "locomotive-scroll";
 export default function ScrollContainer(props) {
   const scrollContainer = useRef();
   const { width } = useWindowSize();
-  let locoScroll;
+  const locoScroll = useRef(null);
+
   useEffect(() => {
-    locoScroll = new locomotiveScroll({
+    locoScroll.current = new locomotiveScroll({
       el: scrollContainer.current,
       smooth: true,
-      direction: width < 576 ? "vertical" : "horizontal",
+      direction: "horizontal",
+      smartphone: {
+        smooth: true,
+        direction: "vertical",
+      },
     });
-    setTimeout(locoScroll.update(), 100);
+    setTimeout(locoScroll.current.update(), 100);
+
+    return () => {
+      locoScroll.current.destroy();
+    };
   }, [width]);
+
+  const scrollTo = () => {};
 
   return (
     <div
-      className="ScrollContainer flex"
+      className="ScrollContainer"
       ref={scrollContainer}
       data-scroll-container
+      onClick={scrollTo}
     >
-      {props.children}
+      <div className="flex">{props.children}</div>
     </div>
   );
 }
